@@ -1,0 +1,20 @@
+:root {
+  /* Primary blue for light mode */
+  --ifm-color-primary: #1641fe; /* vivid blue */
+  --ifm-color-primary-dark: #1439e5;
+  --ifm-color-primary-darker: #1234cc;
+  --ifm-color-primary-darkest: #0e2899;
+  --ifm-color-primary-light: #3c5ffe;
+  --ifm-color-primary-lighter: #5a76fe;
+  --ifm-color-primary-lightest: #7a90fe;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  /* Dark mode base background is already dark gray via Infima,
+     so we push a neon-style pop blue */
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
