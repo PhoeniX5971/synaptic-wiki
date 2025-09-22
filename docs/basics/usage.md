@@ -2,12 +2,11 @@
 sidebar_position: 2
 ---
 
-# Basic Usage
+# Usage
 
 Start by creating an empty python file.
 
 ## Imports
-
 
 ```py title="test.py" {1-2} showLineNumbers
 from synaptic import Model, Provider

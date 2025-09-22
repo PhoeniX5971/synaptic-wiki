@@ -2,19 +2,22 @@
 sidebar_position: 5
 ---
 
-# Basic Tools
+# Tools
 
 We will now see how to use **tools** with the model.
 Tools are external functions that the model can call to get more information or
 perform actions.
 
 We will need to:
+
 1. Import `Tool` class.
 2. Make a callable function.
 3. Make a function declaration for the model.
 4. Create a tool.
 5. Bind the tool to the model.
 6. Enable `autorun`.
+
+## Manual Binding
 
 :::note
 We follow standard function calling declaration style.
@@ -70,14 +73,26 @@ print(response.tool_results)
 print("\n\n")
 print(model.history.MemoryList) # -> also saved in memory
 ```
+
 ```md title="Output"
-
-
 [<ToolCall(name='add', args={ a=12, b=30 })>]
-
 
 [{'name': 'add', 'result': 42}]
 
-
 [<Memory role=assistant message='' created=2025-09-16 23:04:47.114534+00:00 tool_calls=[<ToolCall(name='add', args={ a=12, b=30 })>] tool_results=[{'name': 'add', 'result': 42}]>]
 ```
+
+## Using Decorator
+
+```py
+from synaptic.core import autotool
+@autotool(
+    description="A tool that adds two numbers",
+    param_descriptions={"a": "First integer", "b": "Second integer"},
+)
+def add_tool(a: int, b: int) -> int:
+    return a + b
+```
+
+This will auto add the tool into the global tool registry and reload the tools
+for the models.

@@ -46,24 +46,23 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/phoienix5971/synaptic/",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/phoienix5971/synaptic/",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
         theme: {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  // Add plugin instance just for API
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "api",
+        path: "api", // create a folder called /api at repo root
+        routeBasePath: "api",
+        sidebarPath: "./sidebars.ts", // optional
+      },
     ],
   ],
 
@@ -78,7 +77,7 @@ const config: Config = {
       },
       items: [
         { to: "/docs/intro", label: "Documentation", position: "left" },
-        { to: "/api", label: "API", position: "left" },
+        { to: "/api/intro", label: "API", position: "left" },
         {
           href: "https://github.com/phoenix5971/synaptic",
           label: "GitHub",

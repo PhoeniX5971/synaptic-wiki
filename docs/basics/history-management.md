@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Basic History Management
+# History Management
 
 We will now use the built-in history management of Synaptic.
 
@@ -38,8 +38,6 @@ print(model.history.MemoryList)
 
 ```md title="Output"
 Absolute vocal powerhouse, totally captivating and unique. Love her style and the mystery!
-
-
 
 [<Memory role=assistant message='Absolute vocal powerhouse, totally captivating and unique. Love her style and the mystery!' created=2025-09-16 22:37:57.166735+00:00 tool_calls=[] tool_results=[]>]
 ```
