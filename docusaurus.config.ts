@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Synaptic",
   tagline: "A framework for LLM orchestration",
-  favicon: "img/favicon.ico",
+  favicon: "img/synaptic.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
